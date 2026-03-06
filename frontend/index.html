@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Resume and Cover Letter Generator utilizing Hugging Face API">
+    <title>Nova | AI Career Architect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="app-header">
+            <h1><i class="fa-solid fa-bolt text-gradient"></i> Nova</h1>
+            <p>Next-Gen Resume & Cover Letter Generator</p>
+        </header>
+
+        <div class="grid-layout">
+            <section class="input-section glass-panel">
+                <h2><i class="fa-solid fa-user-tie"></i> Profile Details</h2>
+
+                <div class="input-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="John Doe">
+                </div>
+
+                <div class="input-group">
+                    <label for="contact-info">Contact Information</label>
+                    <input type="text" id="contact-info" placeholder="Email, Phone">
+                </div>
+
+                <div class="input-group">
+                    <label for="linkedin-url">LinkedIn Profile</label>
+                    <input type="url" id="linkedin-url" placeholder="https://linkedin.com/in/johndoe">
+                </div>
+
+                <div class="input-group">
+                    <label for="github-url">GitHub Profile</label>
+                    <input type="url" id="github-url" placeholder="https://github.com/johndoe">
+                </div>
+
+                <div class="input-group">
+                    <label for="experience">Work Experience</label>
+                    <textarea id="experience"
+                        placeholder="Detail your previous roles, companies, and key achievements..."
+                        rows="4"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="education">Education & Skills</label>
+                    <textarea id="education" placeholder="University, Degrees, and key technical/soft skills..."
+                        rows="3"></textarea>
+                </div>
+            </section>
+
+            <section class="target-section glass-panel">
+                <h2><i class="fa-solid fa-crosshairs"></i> Target Role</h2>
+
+                <div class="input-group">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" placeholder="e.g. Senior Software Engineer">
+                </div>
+
+                <div class="input-group">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" placeholder="e.g. Google">
+                </div>
+
+                <div class="input-group">
+                    <label for="job-description">Job Description (JD)</label>
+                    <textarea id="job-description" placeholder="Paste the job requirements and responsibilities here..."
+                        rows="6"></textarea>
+                </div>
+
+                <button id="generate-btn" class="primary-btn">
+                    <span class="btn-text">Generate LaTeX PDF Docs</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <div class="loader-spinner hidden"></div>
+                </button>
+            </section>
+        </div>
+
+        <section id="result-section" class="result-section glass-panel hidden">
+            <h2><i class="fa-solid fa-check-circle text-success"></i> Generation Complete</h2>
+            <p class="success-message">Your career documents are ready. The LaTeX code has been generated and instantly
+                converted to PDF.</p>
+
+            <div class="action-buttons">
+                <a id="download-resume" href="#" target="_blank" class="download-btn">
+                    <i class="fa-solid fa-file-pdf"></i> Download Resume PDF
+                </a>
+                <a id="download-cover-letter" href="#" class="download-btn secondary">
+                    <i class="fa-solid fa-file-word"></i> Download Cover Letter (HTML/Word)
+                </a>
+            </div>
+
+            <div class="raw-code">
+                <details>
+                    <summary>View Raw LaTeX Resume</summary>
+                    <pre><code id="raw-resume"></code></pre>
+                </details>
+                <details>
+                    <summary>View Cover Letter Message (HTML)</summary>
+                    <div id="raw-cover">
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
